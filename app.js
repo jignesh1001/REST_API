@@ -18,7 +18,8 @@ mongoose.connect(url).then(()=>{
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(express.json())
 
-// defining model and schema
+// Define the Product schema
+
 const productSchema = new mongoose.Schema({
 name :String,
 description:String,
@@ -28,6 +29,7 @@ price:Number,
 
 
 // Define the customer schema
+
 const customerSchema = new mongoose.Schema({
   firstName: {
     type: String,
@@ -220,6 +222,8 @@ app.delete("/api/v1/product/:id",async(req,res)=>{
     })
 })
 
+
+// testing  endpoints 
 app.get('/',(req,res)=>{
      res.send("Working Fine")
 })
